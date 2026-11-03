@@ -6,6 +6,11 @@ public class CalculadoraDescontoTDD {
         if (valorTotalItens <= 0) {
             throw new IllegalArgumentException("Valor inválido");
         }
-        return valorTotalItens;
+
+        if (valorTotalItens < 100.00) {
+            return valorTotalItens + 15.00;
+        } else {
+            return valorTotalItens;
+        }
     }
 }
