@@ -26,4 +26,11 @@ public class CalculadoraDescontoTDD_Test {
         double resultado = calculadora.calcularValorFinal(600.0, false);
         assertEquals(540.0, resultado, 0.01); // 600 - 10%
     }
+
+    @Test
+    public void deveAplicarVintePorCentoDeDescontoAcimaDe1000() {
+        CalculadoraDescontoTDD calculadora = new CalculadoraDescontoTDD();
+        double resultado = calculadora.calcularValorFinal(2000.0, false);
+        assertEquals(1600.0, resultado, 0.01); // 2000 - 20%
+    }
 }
