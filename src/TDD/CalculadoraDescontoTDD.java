@@ -9,7 +9,9 @@ public class CalculadoraDescontoTDD {
 
         double valorComDesconto = valorTotalItens;
 
-        if (valorTotalItens > 500.00) {
+        if (valorTotalItens > 1000.00) {
+            valorComDesconto = valorTotalItens * 0.80;
+        } else if (valorTotalItens > 500.00) {
             valorComDesconto = valorTotalItens * 0.90;
         }
 
