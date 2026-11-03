@@ -19,4 +19,11 @@ public class CalculadoraDescontoTDD_Test {
         double resultado = calculadora.calcularValorFinal(50.0, false);
         assertEquals(65.0, resultado, 0.01); // 50 + 15 de frete
     }
+
+    @Test
+    public void deveAplicarDezPorCentoDeDescontoAcimaDe500() {
+        CalculadoraDescontoTDD calculadora = new CalculadoraDescontoTDD();
+        double resultado = calculadora.calcularValorFinal(600.0, false);
+        assertEquals(540.0, resultado, 0.01); // 600 - 10%
+    }
 }
