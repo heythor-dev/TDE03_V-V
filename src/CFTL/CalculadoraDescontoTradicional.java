@@ -1,3 +1,5 @@
+package CFTL;
+
 public class CalculadoraDescontoTradicional {
 
     public double calcularValorFinal(double valorTotalItens, boolean isVip) {
