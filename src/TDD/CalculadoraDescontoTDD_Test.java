@@ -33,4 +33,20 @@ public class CalculadoraDescontoTDD_Test {
         double resultado = calculadora.calcularValorFinal(2000.0, false);
         assertEquals(1600.0, resultado, 0.01); // 2000 - 20%
     }
+
+    @Test
+    public void deveAplicarDescontoVipAcumulativo() {
+        CalculadoraDescontoTDD calculadora = new CalculadoraDescontoTDD();
+        // 600 - 10% = 540 -> 540 - 5% = 513
+        double resultado = calculadora.calcularValorFinal(600.0, true);
+        assertEquals(513.0, resultado, 0.01);
+    }
+
+    @Test
+    public void deveCobrarFreteQuandoDescontoVipReduzValorParaAbaixoDe100() {
+        CalculadoraDescontoTDD calculadora = new CalculadoraDescontoTDD();
+        // 100 - 5% = 95. Como 95 < 100, paga frete de 15. Final = 110.
+        double resultado = calculadora.calcularValorFinal(100.0, true);
+        assertEquals(110.0, resultado, 0.01);
+    }
 }
