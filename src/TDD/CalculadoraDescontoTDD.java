@@ -7,10 +7,16 @@ public class CalculadoraDescontoTDD {
             throw new IllegalArgumentException("Valor inválido");
         }
 
+        double valorComDesconto = valorTotalItens;
+
+        if (valorTotalItens > 500.00) {
+            valorComDesconto = valorTotalItens * 0.90;
+        }
+
         if (valorTotalItens < 100.00) {
-            return valorTotalItens + 15.00;
+            return valorComDesconto + 15.00;
         } else {
-            return valorTotalItens;
+            return valorComDesconto;
         }
     }
 }
