@@ -1,7 +1,6 @@
 package TDD;
 
 public class CalculadoraDescontoTDD {
-
     public double calcularValorFinal(double valorTotalItens, boolean isVip) {
         if (valorTotalItens <= 0) {
             throw new IllegalArgumentException("Valor inválido");
@@ -15,7 +14,11 @@ public class CalculadoraDescontoTDD {
             valorComDesconto = valorTotalItens * 0.90;
         }
 
-        if (valorTotalItens < 100.00) {
+        if (isVip) {
+            valorComDesconto = valorComDesconto * 0.95;
+        }
+
+        if (valorComDesconto < 100.00) {
             return valorComDesconto + 15.00;
         } else {
             return valorComDesconto;
